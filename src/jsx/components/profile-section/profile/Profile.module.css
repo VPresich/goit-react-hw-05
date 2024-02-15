@@ -1,0 +1,129 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid var(--secondary-color);
+  border-radius: 16px;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.info {
+  padding: 16px;
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+}
+
+.name {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.tag {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--section-gray-color);
+}
+
+.location {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--section-gray-color);
+}
+
+.stats {
+  width: 100%;
+  display: flex;
+  background-color: var(--section-bgr-color);
+  color: var(--sec0ndary-color);
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.stats li {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  flex: 1;
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  align-items: center;
+  border-right: 2px solid var(--accent-color);
+  border-top: 2px solid var(--accent-color);
+}
+
+.stats li:last-child {
+  border-right: none;
+}
+
+.label {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.value {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 768px) {
+  .profile {
+    max-width: 500px;
+    margin-bottom: 24px;
+  }
+
+  .personal-info {
+    padding: 24px;
+  }
+
+  .avatar {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+  }
+
+  .name {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  .tag {
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--section-gray-color);
+  }
+
+  .location {
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--section-gray-color);
+  }
+  .label {
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  .value {
+    font-size: 24px;
+    font-weight: 700;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .profile {
+    margin-bottom: 28px;
+  }
+}

@@ -1,0 +1,25 @@
+.menu {
+  padding-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.link {
+  color: var(--secondary-color);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 12px;
+  text-decoration: none;
+  font-style: normal;
+}
+
+.active {
+  color: var(--active-menu-color);
+}
+
+.link:hover {
+  color: var(--active-menu-color);
+}

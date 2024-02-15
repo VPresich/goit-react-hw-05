@@ -1,0 +1,19 @@
+.friends-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  column-gap: 8px;
+  row-gap: 8px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .friends-list {
+    column-gap: 16px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+}

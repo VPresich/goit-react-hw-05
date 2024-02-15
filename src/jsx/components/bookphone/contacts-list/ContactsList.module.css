@@ -1,0 +1,32 @@
+.contacts-list {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.contact {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid var(--secondary-color);
+}
+
+@media screen and (min-width: 768px) {
+  .contacts-list {
+    gap: 20px;
+  }
+
+  .contact {
+    max-width: 375px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .contacts-list {
+    gap: 24px;
+  }
+}
