@@ -1,0 +1,9 @@
+.link {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.line {
+  width: 2px;
+  color: var(--accent-color);
+}

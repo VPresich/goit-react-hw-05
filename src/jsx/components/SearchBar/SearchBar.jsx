@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { CustomButton } from '../UI/button/CustomButton';
 import { CustomInput } from '../UI/input/CustomInput';
+import { GoSearch } from 'react-icons/go';
 
 import styles from './SearchBar.module.css';
 
@@ -23,7 +24,10 @@ const SearchBar = ({ onSearch }) => {
         autoFocus
         placeholder="Search movies"
       />
-      <CustomButton type="submit">Search</CustomButton>
+      <CustomButton type="submit">
+        <GoSearch />
+        Search
+      </CustomButton>
     </form>
   );
 };

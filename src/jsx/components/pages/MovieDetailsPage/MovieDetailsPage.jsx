@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+//import { getConfiguration } from '../../../api/getConfiguration';
 
 import useFetchData from '../../../hooks/useFetchData';
 import ApiService from '../../../api/ApiService';
@@ -7,15 +8,16 @@ import ApiService from '../../../api/ApiService';
 import AppContainer from '../../App/AppContainer/AppContainer';
 import AppSection from '../../App/AppSection/AppSection';
 
-import MovieInfo from '../../MovieInfo/MovieInfo';
 import TitleSection from '../../TitleSection/TitleSection';
+import MovieInfo from '../../MovieInfo/MovieInfo';
 import MovieCast from '../../MovieCast/MovieCast';
 import MovieReviews from '../../MovieReviews/MovieReviews';
-
-// import { getConfiguration } from '../../../api/getConfiguration';
+import { FaArrowLeftLong } from 'react-icons/fa6';
 
 import { CustomButton } from '../../UI/button/CustomButton';
 import InfinityLoader from '../../UI/loader/InfinityLoader/InfinityLoader';
+
+import styles from './MoviieDetails.module.css';
 
 const MovieDetailsPage = () => {
   const { id } = useParams();
@@ -63,13 +65,16 @@ const MovieDetailsPage = () => {
   return (
     <AppContainer>
       <AppSection>
-        <CustomButton onClick={handleGoBack}>Back</CustomButton>
+        <CustomButton onClick={handleGoBack}>
+          <FaArrowLeftLong />
+          Back
+        </CustomButton>
         <InfinityLoader isLoading={itemLoading} />
         {itemError ? <p>{itemError}</p> : <MovieInfo item={item} />}
 
         <TitleSection>Aditional information</TitleSection>
         <hr></hr>
-        <Link to={`cast`} onClick={handleCredits}>
+        <Link className={styles.link} to={`cast`} onClick={handleCredits}>
           Cast
         </Link>
         <MovieCast
@@ -78,7 +83,7 @@ const MovieDetailsPage = () => {
           items={itemCredits}
         />
         <hr></hr>
-        <Link to={`reviews`} onClick={handleReviews}>
+        <Link className={styles.link} to={`reviews`} onClick={handleReviews}>
           Reviews
         </Link>
         <MovieReviews
