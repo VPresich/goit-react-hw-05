@@ -3,7 +3,7 @@ import useFetchData from '../../../hooks/useFetchData';
 import AppContainer from '../../App/AppContainer/AppContainer';
 import AppSection from '../../App/AppSection/AppSection';
 import ApiServise from '../../../api/ApiService/';
-import TitleSection from '../../TitleSection';
+import TitleSection from '../../TitleSection/TitleSection';
 import InfinityLoader from '../../UI/loader/InfinityLoader/InfinityLoader';
 import ErrorMessage from '../../ErrorMessage/ErrorMessage';
 import { ItemsList } from '../../ItemsList/ItemsList';
