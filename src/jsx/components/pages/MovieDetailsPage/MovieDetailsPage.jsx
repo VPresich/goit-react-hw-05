@@ -8,7 +8,7 @@ import ApiService from '../../../api/ApiService';
 import AppContainer from '../../App/AppContainer/AppContainer';
 import AppSection from '../../App/AppSection/AppSection';
 
-import TitleSection from '../../TitleSection/TitleSection';
+import TitleSection from '../../titleSection/TitleSection';
 import MovieInfo from '../../MovieInfo/MovieInfo';
 import MovieCast from '../../MovieCast/MovieCast';
 import MovieReviews from '../../MovieReviews/MovieReviews';

@@ -3,7 +3,7 @@ import useFetchData from '../../../hooks/useFetchData';
 import AppContainer from '../../App/AppContainer/AppContainer';
 import AppSection from '../../App/AppSection/AppSection';
 import ApiServise from '../../../api/ApiService/';
-import TitleSection from '../../TitleSection/TitleSection.jsx';
+// import TitleSection from '../../titleSection/TitleSection';
 import InfinityLoader from '../../UI/loader/InfinityLoader/InfinityLoader';
 import ErrorMessage from '../../ErrorMessage/ErrorMessage';
 import { ItemsList } from '../../ItemsList/ItemsList';
@@ -27,7 +27,7 @@ const HomePage = () => {
   return (
     <AppContainer>
       <AppSection>
-        <TitleSection>Trending today</TitleSection>
+        <h1>Trending today</h1>
         <InfinityLoader isLoading={loading} />
         {error && <ErrorMessage />}
         <ItemsList items={items}></ItemsList>
