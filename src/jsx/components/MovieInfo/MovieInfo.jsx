@@ -5,7 +5,6 @@ import styles from './MovieInfo.module.css';
 const MovieInfo = ({
   item: { id, poster_path, original_title, overview, genres },
 }) => {
-  console.log(genres);
   return (
     <div className={styles.section}>
       <div className={styles.wrapper}>

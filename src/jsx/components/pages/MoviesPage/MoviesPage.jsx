@@ -7,6 +7,10 @@ import SearchBar from '../../SearchBar/SearchBar';
 import InfinityLoader from '../../UI/loader/InfinityLoader/InfinityLoader';
 import ErrorMessage from '../../ErrorMessage/ErrorMessage';
 import { ItemsList } from '../../ItemsList/ItemsList';
+import { NO_ELEMENTS } from '../../ErrorMessage/constants';
+import { Toaster } from 'react-hot-toast';
+import { errNotify } from '../../../notifications/error-notify';
+import { ERR_EMPTY_SEARCH } from '../../../notifications/constants';
 
 const MoviesPage = () => {
   const [items, setItems] = useState([]);
@@ -19,33 +23,24 @@ const MoviesPage = () => {
   const handleSearch = strFilter => {
     console.log(strFilter);
     if (strFilter.trim() === '') {
-      // errNotify(ERR_EMPTY_SEARCH);
+      errNotify(ERR_EMPTY_SEARCH);
       return;
     }
     fetchItemData(strFilter);
-    // setError(false);
-    // setLoading(true);
-    // ApiService.searchMovies(strFilter)
-    //   .then(data => {
-    //     setItems(prevItems => [...prevItems, ...data.results]);
-    //     console.log(data);
-    //   })
-    //   .catch(error => {
-    //     // errNotify(error.message);
-    //     setError(true);
-    //   })
-    //   .finally(() => {
-    //     setLoading(false);
-    //   });
   };
 
   return (
     <AppContainer>
       <AppSection>
-        <SearchBar onSearch={handleSearch}></SearchBar>
+        <SearchBar onSearch={handleSearch} />
+        <Toaster />
         <InfinityLoader isLoading={loading} />
-        <ErrorMessage isError={error} />
-        {items.length > 0 && <ItemsList items={items} />}
+        {error && <ErrorMessage />}
+        {items.length ? (
+          <ItemsList items={items} />
+        ) : (
+          <ErrorMessage msg={NO_ELEMENTS} />
+        )}
       </AppSection>
     </AppContainer>
   );

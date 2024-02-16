@@ -48,7 +48,7 @@ export default class ApiService {
           page: 1,
         },
       });
-      return response.data.results;
+      return response.data?.results;
     } catch (error) {
       console.log(error.message);
       return [];

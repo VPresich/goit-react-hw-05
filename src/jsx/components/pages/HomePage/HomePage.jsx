@@ -29,8 +29,8 @@ const HomePage = () => {
       <AppSection>
         <TitleSection>Trending today</TitleSection>
         <InfinityLoader isLoading={loading} />
-        <ErrorMessage isError={error} />
-        {items && <ItemsList items={items}></ItemsList>}
+        {error && <ErrorMessage />}
+        <ItemsList items={items}></ItemsList>
         {/* <CustomButton onClick={handleLoadList}>Get Trending Movies</CustomButton> */}
       </AppSection>
     </AppContainer>
