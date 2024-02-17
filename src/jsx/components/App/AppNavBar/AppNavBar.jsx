@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, Nav } from 'react-router-dom';
 import { useState } from 'react';
 import AppContainer from '../AppContainer/AppContainer';
 
@@ -17,7 +17,7 @@ const AppNavBar = () => {
 
   return (
     <AppContainer>
-      <nav className={styles.navBar}>
+      <Nav className={styles.navBar}>
         <NavLink
           className={buildClassName('/')}
           to="/"
@@ -33,7 +33,7 @@ const AppNavBar = () => {
         >
           Movies
         </NavLink>
-      </nav>
+      </Nav>
     </AppContainer>
   );
 };
