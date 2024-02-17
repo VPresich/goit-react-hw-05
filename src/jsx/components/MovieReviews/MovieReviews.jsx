@@ -8,7 +8,6 @@ import InfinityLoader from '../UI/loader/Infinity/Infinity';
 import ReviewList from '../ReviewList/ReviewList';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import { NO_ELEMENTS } from '../ErrorMessage/constants';
-// import { CustomButton } from '../UI/button/CustomButton';
 
 const MovieReviews = () => {
   const { id } = useParams();
@@ -37,8 +36,6 @@ const MovieReviews = () => {
       ) : (
         <ErrorMessage msg={NO_ELEMENTS} />
       )}
-
-      {/* <CustomButton onClick={handleReviews}>Revies</CustomButton> */}
     </>
   );
 };

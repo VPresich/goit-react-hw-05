@@ -1,13 +1,10 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-
 import useFetchData from '../../hooks/useFetchData';
 import ApiService from '../../api/ApiService';
-
 import InfinityLoader from '../UI/loader/Infinity/Infinity';
 import CastList from '../CastList/CastList';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
-// import { CustomButton } from '../UI/button/CustomButton';
 
 const MovieCast = () => {
   const { id } = useParams();
@@ -25,7 +22,6 @@ const MovieCast = () => {
   const handleCredits = () => {
     fetchCreditsData(id);
   };
-
   return (
     <>
       <InfinityLoader isLoading={loading} />

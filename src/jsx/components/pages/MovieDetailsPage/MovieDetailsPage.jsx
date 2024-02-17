@@ -58,7 +58,6 @@ const MovieDetailsPage = () => {
         </nav>
         <hr></hr>
         <Outlet />
-        {/* <CustomButton onClick={handleById}>Get by id</CustomButton> */}
       </AppSection>
     </AppContainer>
   );
