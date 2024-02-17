@@ -4,7 +4,7 @@ import ApiService from '../../../api/ApiService';
 import AppContainer from '../../App/AppContainer/AppContainer';
 import AppSection from '../../App/AppSection/AppSection';
 import SearchBar from '../../SearchBar/SearchBar';
-import InfinityLoader from '../../UI/loader/InfinityLoader/InfinityLoader';
+import InfinityLoader from '../../UI/loader/Infinity/Infinity';
 import ErrorMessage from '../../ErrorMessage/ErrorMessage';
 import { ItemsList } from '../../ItemsList/ItemsList';
 import { NO_ELEMENTS } from '../../ErrorMessage/constants';

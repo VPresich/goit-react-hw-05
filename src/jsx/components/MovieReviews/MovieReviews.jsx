@@ -1,5 +1,5 @@
 import AppSection from '../App/AppSection/AppSection';
-import InfinityLoader from '../../components/UI/loader/InfinityLoader/InfinityLoader';
+import InfinityLoader from '../UI/loader/Infinity/Infinity';
 import ReviewList from '../ReviewList/ReviewList';
 
 const MovieReviews = ({ loading, error, items }) => {

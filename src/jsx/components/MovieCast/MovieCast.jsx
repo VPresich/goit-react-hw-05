@@ -1,5 +1,5 @@
 import AppSection from '../App/AppSection/AppSection';
-import InfinityLoader from '../UI/loader/InfinityLoader/InfinityLoader';
+import InfinityLoader from '../UI/loader/Infinity/Infinity';
 import CastList from '../CastList/CastList';
 
 const MovieCast = ({ loading, error, items }) => {

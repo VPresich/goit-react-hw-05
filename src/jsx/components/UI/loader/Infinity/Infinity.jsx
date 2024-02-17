@@ -1,5 +1,5 @@
 import { InfinitySpin } from 'react-loader-spinner';
-import styles from './InfinityLoader.module.css';
+import styles from './Infinity.module.css';
 
 const InfinityLoader = ({ isLoading }) => {
   return (

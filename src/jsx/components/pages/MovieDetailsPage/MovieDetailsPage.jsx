@@ -15,7 +15,7 @@ import MovieReviews from '../../MovieReviews/MovieReviews';
 import { FaArrowLeftLong } from 'react-icons/fa6';
 
 import { CustomButton } from '../../UI/button/CustomButton';
-import InfinityLoader from '../../UI/loader/InfinityLoader/InfinityLoader';
+import InfinityLoader from '../../UI/loader/Infinity/Infinity';
 
 import styles from './MoviieDetails.module.css';
 
