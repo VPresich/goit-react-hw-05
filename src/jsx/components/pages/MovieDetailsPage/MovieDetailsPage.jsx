@@ -1,12 +1,10 @@
 import { useParams, NavLink, Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-
 //import { getConfiguration } from '../../../api/getConfiguration';
 
 import useFetchData from '../../../hooks/useFetchData';
 import ApiService from '../../../api/ApiService';
-
 import AppContainer from '../../App/AppContainer/AppContainer';
 import AppSection from '../../App/AppSection/AppSection';
 import AppSecTitle from '../../App/AppSecTitle/AppSecTitle';
@@ -14,8 +12,7 @@ import MovieInfo from '../../MovieInfo/MovieInfo';
 import CustomLink from '../../UI/link/CustomLink';
 import { FaArrowLeftLong } from 'react-icons/fa6';
 import InfinityLoader from '../../UI/loader/Infinity/Infinity';
-// import { CustomButton } from '../../UI/button/CustomButton';
-import styles from './MoviieDetails.module.css';
+import styles from './MovieDetails.module.css';
 
 const MovieDetailsPage = () => {
   const { id } = useParams();
