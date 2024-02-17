@@ -7,3 +7,9 @@
   width: 2px;
   color: var(--accent-color);
 }
+
+.navLink {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

@@ -1,15 +1,39 @@
-import AppSection from '../App/AppSection/AppSection';
+import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+
+import useFetchData from '../../hooks/useFetchData';
+import ApiService from '../../api/ApiService';
+
 import InfinityLoader from '../UI/loader/Infinity/Infinity';
 import ReviewList from '../ReviewList/ReviewList';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
+// import { CustomButton } from '../UI/button/CustomButton';
 
-const MovieReviews = ({ loading, error, items }) => {
-  if (!items.length) return <></>;
+const MovieReviews = () => {
+  const { id } = useParams();
+  const [items, setItems] = useState([]);
+
+  const [loading, error, fetchReviewsData] = useFetchData(
+    async (id, reviews = 'reviews') => {
+      const responce = await ApiService.getMovieDetailsById(id, reviews);
+      setItems(responce.results);
+    }
+  );
+
+  useEffect(() => handleReviews(), []);
+
+  const handleReviews = () => {
+    fetchReviewsData(id);
+  };
+
   return (
-    <AppSection>
+    <>
       <InfinityLoader isLoading={loading} />
-      {error && <p>{error}</p>}
-      <ReviewList items={items} />
-    </AppSection>
+      {error && <ErrorMessage />}
+      {items && <ReviewList items={items} />}
+
+      {/* <CustomButton onClick={handleReviews}>Revies</CustomButton> */}
+    </>
   );
 };
 
