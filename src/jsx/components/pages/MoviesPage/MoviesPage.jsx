@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import useFetchData from '../../../hooks/useFetchData';
 import ApiService from '../../../api/ApiService';
 import AppContainer from '../../App/AppContainer/AppContainer';
@@ -8,31 +9,40 @@ import InfinityLoader from '../../UI/loader/Infinity/Infinity';
 import ErrorMessage from '../../ErrorMessage/ErrorMessage';
 import { ItemsList } from '../../ItemsList/ItemsList';
 import { NO_ELEMENTS } from '../../ErrorMessage/constants';
-import { Toaster } from 'react-hot-toast';
-import { errNotify } from '../../../notifications/error-notify';
 import { ERR_EMPTY_SEARCH } from '../../../notifications/constants';
+import errNotify from '../../../notifications/errorNotify';
+import { Toaster } from 'react-hot-toast';
 
 const MoviesPage = () => {
   const [items, setItems] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const [loading, error, fetchItemData] = useFetchData(async filter => {
     const responce = await ApiService.searchMovies(filter);
     setItems(responce);
   });
 
+  useEffect(() => {
+    const strFilter = searchParams.get('search');
+    strFilter && fetchItemData(strFilter);
+  }, []);
+
   const handleSearch = strFilter => {
-    console.log(strFilter);
-    if (strFilter.trim() === '') {
+    if (strFilter === '') {
       errNotify(ERR_EMPTY_SEARCH);
       return;
     }
     fetchItemData(strFilter);
+    setSearchParams({ search: strFilter });
   };
 
   return (
     <AppContainer>
       <AppSection>
-        <SearchBar onSearch={handleSearch} />
+        <SearchBar
+          onSearch={handleSearch}
+          initialValue={searchParams.get('search')}
+        />
         <Toaster />
         <InfinityLoader isLoading={loading} />
         {error && <ErrorMessage />}

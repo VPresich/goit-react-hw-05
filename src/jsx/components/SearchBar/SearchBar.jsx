@@ -5,13 +5,12 @@ import { GoSearch } from 'react-icons/go';
 
 import styles from './SearchBar.module.css';
 
-const SearchBar = ({ onSearch }) => {
-  const [value, setValue] = useState('');
+const SearchBar = ({ onSearch, initialValue }) => {
+  const [value, setValue] = useState(initialValue || '');
 
   const handleSubmit = event => {
     event.preventDefault();
     onSearch(value);
-    event.target.reset();
   };
 
   return (

@@ -1,6 +1,8 @@
 import toast from 'react-hot-toast';
-export const errNotify = msg => {
+const errNotify = msg => {
   toast.error(msg, {
     duration: 1000,
   });
 };
+
+export default errNotify;
