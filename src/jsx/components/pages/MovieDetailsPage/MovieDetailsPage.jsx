@@ -8,7 +8,6 @@ import ApiService from '../../../api/ApiService';
 import AppContainer from '../../App/AppContainer/AppContainer';
 import AppSection from '../../App/AppSection/AppSection';
 
-import TitleSection from '../../titleSection/TitleSection';
 import MovieInfo from '../../MovieInfo/MovieInfo';
 import MovieCast from '../../MovieCast/MovieCast';
 import MovieReviews from '../../MovieReviews/MovieReviews';
@@ -72,7 +71,7 @@ const MovieDetailsPage = () => {
         <InfinityLoader isLoading={itemLoading} />
         {itemError ? <p>{itemError}</p> : <MovieInfo item={item} />}
 
-        <TitleSection>Aditional information</TitleSection>
+        <h1>Aditional information</h1>
         <hr></hr>
         <Link className={styles.link} to={`cast`} onClick={handleCredits}>
           Cast
