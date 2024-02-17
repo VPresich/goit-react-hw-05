@@ -5,7 +5,6 @@ export default class ApiService {
   static async getTrends() {
     try {
       const endPoint = 'trending/movie/day';
-      console.log(BASE_URL + endPoint);
       const response = await axios.get(BASE_URL + endPoint, {
         params: {
           api_key: API_KEY,
