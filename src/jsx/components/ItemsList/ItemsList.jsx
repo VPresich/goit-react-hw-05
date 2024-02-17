@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import styles from './ItemsList.module.css';
-export const ItemsList = ({ items }) => {
+
+const ItemsList = ({ items }) => {
   const location = useLocation();
   return (
     <ul className={styles.items}>
@@ -18,3 +19,4 @@ export const ItemsList = ({ items }) => {
     </ul>
   );
 };
+export default ItemsList;

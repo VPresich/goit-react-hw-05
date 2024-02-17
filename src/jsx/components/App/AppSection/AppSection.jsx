@@ -1,6 +1,6 @@
 import styles from './AppSection.module.css';
 
 const AppSection = ({ children }) => {
-  return <div className={styles.section}>{children}</div>;
+  return <section className={styles.section}>{children}</section>;
 };
 export default AppSection;

@@ -31,7 +31,6 @@ const MovieCast = () => {
       <InfinityLoader isLoading={loading} />
       {error && <ErrorMessage />}
       {items && <CastList items={items} />}
-      {/* <CustomButton onClick={handleCredits}>Cast</CustomButton> */}
     </>
   );
 };

@@ -9,7 +9,7 @@ import ApiService from '../../../api/ApiService';
 
 import AppContainer from '../../App/AppContainer/AppContainer';
 import AppSection from '../../App/AppSection/AppSection';
-
+import AppSecTitle from '../../App/AppSecTitle/AppSecTitle';
 import MovieInfo from '../../MovieInfo/MovieInfo';
 import CustomLink from '../../UI/link/CustomLink';
 import { FaArrowLeftLong } from 'react-icons/fa6';
@@ -45,13 +45,12 @@ const MovieDetailsPage = () => {
         {itemError ? <p>{itemError}</p> : <MovieInfo item={item} />}
       </AppSection>
       <AppSection>
-        <h1>Aditional information</h1>
+        <AppSecTitle>Aditional information</AppSecTitle>
         <hr></hr>
         <nav className={styles.navLink}>
           <NavLink className={styles.link} to={`cast`} state={location.state}>
             Cast
           </NavLink>
-
           <NavLink
             className={styles.link}
             to={`reviews`}
@@ -61,9 +60,9 @@ const MovieDetailsPage = () => {
           </NavLink>
         </nav>
         <hr></hr>
+        <Outlet />
+        {/* <CustomButton onClick={handleById}>Get by id</CustomButton> */}
       </AppSection>
-      <Outlet />
-      {/* <CustomButton onClick={handleById}>Get by id</CustomButton> */}
     </AppContainer>
   );
 };

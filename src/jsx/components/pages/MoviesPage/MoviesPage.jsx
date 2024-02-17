@@ -7,7 +7,7 @@ import AppSection from '../../App/AppSection/AppSection';
 import SearchBar from '../../SearchBar/SearchBar';
 import InfinityLoader from '../../UI/loader/Infinity/Infinity';
 import ErrorMessage from '../../ErrorMessage/ErrorMessage';
-import { ItemsList } from '../../ItemsList/ItemsList';
+import ItemsList from '../../ItemsList/ItemsList';
 import { NO_ELEMENTS } from '../../ErrorMessage/constants';
 import { ERR_EMPTY_SEARCH } from '../../../notifications/constants';
 import errNotify from '../../../notifications/errorNotify';
