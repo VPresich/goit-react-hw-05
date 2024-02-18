@@ -1,8 +1,6 @@
 import { useParams, NavLink, Outlet } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useLocation } from 'react-router-dom';
-//import { getConfiguration } from '../../../api/getConfiguration';
-
 import useFetchData from '../../../hooks/useFetchData';
 import ApiService from '../../../api/ApiService';
 import AppContainer from '../../App/AppContainer/AppContainer';
@@ -57,7 +55,9 @@ const MovieDetailsPage = () => {
           </NavLink>
         </nav>
         <hr></hr>
-        <Outlet />
+        <Suspense fallback={<div>Loading subpage...</div>}>
+          <Outlet />
+        </Suspense>
       </AppSection>
     </AppContainer>
   );
